@@ -1,0 +1,7 @@
+node_modules/
+tests/
+build/
+src/backend/database/migrations
+src/backend/database/seeders
+src/backend/database/config
+src/backend/database/models/index.ts
