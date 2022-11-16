@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 const PORT = 8000;
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
     res.status(200).send('Servidor Up');
 });
 app.listen(PORT, () => {
