@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && node ./dist/index.js",
-    "dev": "tsnd index.ts",
+    "dev": "nodemon --watch \"./src/**\" ./src/server.ts",
     "build": "tsc",
     "db:reset": "npx -y tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create"
   },
@@ -14,20 +14,23 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "2.4.3",
+    "cors": "2.8.5",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
+    "express": "^4.17.1",
+    "jsonwebtoken": "8.5.1",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.21.3",
-    "jsonwebtoken": "8.5.1",
-    "bcryptjs": "2.4.3"
+    "sequelize": "^6.21.3"
   },
   "devDependencies": {
     "@types/bcryptjs": "2.4.2",
+    "@types/cors": "2.8.12",
+    "@types/express": "^4.17.13",
     "@types/jsonwebtoken": "8.5.6",
-    "@types/express": "^4.17.14",
     "@types/node": "^18.11.9",
     "@types/sequelize": "^4.28.14",
+    "nodemon": "^2.0.20",
     "eslint": "7.32.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-airbnb-typescript": "15.0.0",

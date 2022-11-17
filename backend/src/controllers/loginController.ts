@@ -1,14 +1,14 @@
 import { Request, Response } from 'express';
-import IUsersService from '../interfaces/ILoginService';
+import ILoginService from '../interfaces/ILoginService';
 
-export default class UsersController {
+export default class LoginController {
   constructor(
-    private UsersService: IUsersService,
+    private LoginService: ILoginService,
   ) { }
 
   async login(req: Request, res: Response) {
-    const { email, password } = req.body;
-    const token = await this.UsersService.login(email, password);
+    const { username, password } = req.body;
+    const token = await this.LoginService.login(username, password);
     res.status(200).json({ token });
   }
 }

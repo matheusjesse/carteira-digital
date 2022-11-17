@@ -1,20 +1,20 @@
 import User from '../database/models/users';
-import IUsersService from '../interfaces/ILoginService';
+import ILoginService from '../interfaces/ILoginService';
 import JwtService from '../middlewares/JwtService';
 
-export default class UsersService implements IUsersService {
-  login = async (email: string, password: string): Promise<string> => {
+export default class LoginService implements ILoginService {
+  login = async (username: string, password: string): Promise<string> => {
     await User.findOne({
-      where: { email },
+      where: { username },
       attributes: { exclude: ['password'] },
     });
-    const token = JwtService.sign({ email, password });
+    const token = JwtService.sign({ username, password });
     return token;
   };
 
-  findUser = async (email: string): Promise<User> => {
+  findUser = async (username: string): Promise<User> => {
     const user = await User.findOne({
-      where: { email },
+      where: { username },
     });
     return user as User;
   };
