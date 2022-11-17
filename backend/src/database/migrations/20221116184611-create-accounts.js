@@ -8,6 +8,7 @@ module.exports = {
       },
       balance: {
         type: Sequelize.DECIMAL,
+        allowNull: false
       },
     });
   },
