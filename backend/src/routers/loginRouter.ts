@@ -1,12 +1,15 @@
 import { Router } from 'express';
 import LoginController from '../controllers/loginController';
-import UsersService from '../services/loginService';
+import LoginService from '../services/loginService';
+import Validation from '../middlewares/validation';
 
-const usersService = new UsersService();
-const loginController = new LoginController(usersService);
+const loginService = new LoginService();
+const loginController = new LoginController(loginService);
+const validation = new Validation(loginService);
 
 const router = Router();
 
 router.post('/', (req, res) => loginController.login(req, res));
+router.put('/', validation.createValidation, (req, res) => loginController.create(req, res));
 
 export default router;

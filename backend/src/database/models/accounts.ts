@@ -20,6 +20,7 @@ Account.init({
 }, {
   sequelize: db,
   modelName: 'accounts',
+  timestamps: false,
 });
 
 export default Account;
