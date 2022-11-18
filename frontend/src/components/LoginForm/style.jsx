@@ -27,7 +27,10 @@ const LoginFormContainer = styled.form`
     height: 40px;
     border-radius: 6px ;
     border: 1px solid black;
+    padding-left: 10px;
+    font-size: 20px !important;
   }
+
 
   .password-label {
     width: 300px;
@@ -38,13 +41,15 @@ const LoginFormContainer = styled.form`
   }
 
   .password-label span {
-    width: 300px;
-    
+    width: 300px;    
   }
+
   .password-label input {
     width: 300px;
     height: 40px;
     border-radius: 8px;
+    padding-left: 10px;
+    font-size: 20px !important;
   }
   
   button {

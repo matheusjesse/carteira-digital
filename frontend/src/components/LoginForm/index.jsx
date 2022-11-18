@@ -1,7 +1,24 @@
+import { useState } from "react";
+import requestLogin from "../../api/requestLogin";
 import LoginFormContainer from "./style";
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
-  
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginError, setLoginError] = useState(false);
+ 
+  const navigate = useNavigate();
+
+  const loginHandle = async () => {
+    const response = await requestLogin({ username, password });
+    if (response.message) {
+      setLoginError(true);
+    }
+
+    navigate()
+  }
+
   return (
     <LoginFormContainer>
       <label 
@@ -12,6 +29,7 @@ function LoginForm() {
         <input 
           type="text"
           data-testid="login-from-input-username"
+          onChange={ ({ target }) => setUsername(target.value) }
         />
       </label>
       <label 
@@ -22,11 +40,18 @@ function LoginForm() {
         <input 
           type="password"
           data-testid="login-from-input-password"
+          onChange={ ({ target }) => setPassword(target.value) }
         />
       </label>
-      <button>
+      <button
+        type="button"
+        onClick={ loginHandle }
+      >
         <p>Entrar</p>
       </button>
+      <span>
+        { loginError && 'Login Fail!' }
+      </span>
     </LoginFormContainer>
   );
 }
