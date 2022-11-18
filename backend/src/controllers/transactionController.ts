@@ -11,7 +11,7 @@ export default class TransactionController {
     const token: string = req.headers.authorization as string;
     const author = JwtService.decodeToken(token) as { username: string, password: string };
     const transactionData = await this.TransactionService.transaction(author.username);
-    res.status(201).json(transactionData);
+    res.status(200).json(transactionData);
   }
 
   async transactionFilter(req: Request, res: Response) {
@@ -20,6 +20,6 @@ export default class TransactionController {
     const author = JwtService.decodeToken(token) as { username: string, password: string };
     const transactionData = await
     this.TransactionService.transactionFilter(date, filter, author.username);
-    res.status(201).json(transactionData);
+    res.status(200).json(transactionData);
   }
 }

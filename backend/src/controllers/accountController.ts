@@ -17,6 +17,6 @@ export default class AccountController {
   async cashOut(req: Request, res: Response) {
     const { favorecedor, beneficiado, value } = req.body;
     const message = await this.AccountService.cashOut(favorecedor, beneficiado, value);
-    res.status(200).json({ message });
+    res.status(201).json({ message });
   }
 }
