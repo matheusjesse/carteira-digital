@@ -4,9 +4,7 @@
 ## Instalação
 
 ```sh
-git clone git@github.com:masd
-cd todo-api FAZdsaMASKÇLDM
-npm installAsad
+
 ```
 Subindo containers
 ```sh
