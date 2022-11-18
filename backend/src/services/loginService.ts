@@ -20,11 +20,4 @@ export default class LoginService implements ILoginService {
     const user = await User.create({ username, password, accountId: id });
     return user;
   };
-
-  findUser = async (username: string): Promise<User> => {
-    const user = await User.findOne({
-      where: { username },
-    });
-    return user as User;
-  };
 }
