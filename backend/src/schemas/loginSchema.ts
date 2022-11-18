@@ -1,6 +1,6 @@
 import * as Joi from 'joi';
 
-const loginSchema = Joi.object({
+const createLoginSchema = Joi.object({
   username: Joi.string().required().min(3).messages({
     'any.required': 'Some required fields are missing',
   }),
@@ -9,4 +9,13 @@ const loginSchema = Joi.object({
   }),
 });
 
-export default loginSchema;
+const loginSchema = Joi.object({
+  username: Joi.string().required().messages({
+    'any.required': 'Some required fields are missing',
+  }),
+  password: Joi.string().required().messages({
+    'any.required': 'Some required fields are missing',
+  }),
+});
+
+export { loginSchema, createLoginSchema };
