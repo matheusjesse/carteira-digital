@@ -1,4 +1,4 @@
-import { Model, STRING, INTEGER } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 import db from '.';
 import Account from './accounts';
 
@@ -11,21 +11,21 @@ class User extends Model {
 
 User.init({
   id: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
   },
   username: {
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   password: {
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   accountId: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
 }, {
@@ -35,6 +35,6 @@ User.init({
   timestamps: false,
 });
 
-User.belongsTo(Account, { foreignKey: 'accountId', as: 'user' });
+User.belongsTo(Account, { foreignKey: 'accountId', as: 'account' });
 
 export default User;

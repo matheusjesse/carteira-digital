@@ -1,4 +1,4 @@
-import { Model, DATE, DECIMAL, INTEGER } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 import db from '.';
 import Account from './accounts';
 
@@ -11,31 +11,36 @@ class Transaction extends Model {
 
 Transaction.init({
   id: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
   },
   debitedAccountId: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   creditedAccountId: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   value: {
-    type: DECIMAL,
+    type: DataTypes.DECIMAL(9, 2),
     allowNull: false,
+    get() {
+      return parseFloat(this.getDataValue('value')) || null;
+    },
   },
   createdAt: {
-    type: DATE,
+    type: DataTypes.DATE,
     allowNull: false,
+    defaultValue: DataTypes.NOW,
   },
 }, {
   sequelize: db,
   modelName: 'transactions',
   underscored: true,
+  timestamps: false,
 });
 
 Transaction.belongsTo(Account, { foreignKey: 'debitedAccountId', as: 'debitedAccount' });

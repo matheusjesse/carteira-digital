@@ -1,4 +1,4 @@
-import { Model, DECIMAL, INTEGER } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 import db from '.';
 
 class Account extends Model {
@@ -8,14 +8,17 @@ class Account extends Model {
 
 Account.init({
   id: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
   },
   balance: {
-    type: DECIMAL,
+    type: DataTypes.DECIMAL(9, 2),
     allowNull: false,
+    get() {
+      return parseFloat(this.getDataValue('balance')) || null;
+    },
   },
 }, {
   sequelize: db,
