@@ -9,7 +9,7 @@ const validation = new Validation(loginService);
 
 const router = Router();
 
-router.post('/', (req, res) => loginController.login(req, res));
+router.post('/', validation.loginValidation, (req, res) => loginController.login(req, res));
 router.put('/', validation.createValidation, (req, res) => loginController.create(req, res));
 
 export default router;
