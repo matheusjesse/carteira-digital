@@ -11,4 +11,10 @@ export default class JwtService {
   static verify(token: string) {
     return jwt.verify(token, process.env.JWT_SECRET as string);
   }
+
+  static decodeToken(token: string) {
+    const user = jwt.decode(token);
+
+    return user;
+  }
 }
