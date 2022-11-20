@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import loginRouter from './routers/loginRouter';
 import accountRouter from './routers/accountRouter';
 import transactionRouter from './routers/transactionRouter';
@@ -20,6 +21,7 @@ class App {
       next();
     };
 
+    this.app.use(cors());
     this.app.use(express.json());
     this.app.use(accessControl);
     this.app.use('/login', loginRouter);
