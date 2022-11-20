@@ -14,7 +14,7 @@ router.get(
   (req, res) => transactionController.transaction(req, res),
 );
 router.get(
-  '/filter',
+  '/filter/:data',
   transactionValidate.tokenValidate,
   transactionValidate.validateBody,
   (req, res) => transactionController.transactionFilter(req, res),
