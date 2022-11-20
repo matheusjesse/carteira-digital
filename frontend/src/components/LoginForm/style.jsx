@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const LoginFormContainer = styled.form`
   width: 400px;
-  height: 300px;
+  height: 388px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,9 +19,9 @@ const LoginFormContainer = styled.form`
   }
 
   .username-label span {
-    width: 300px;
-    
+    width: 300px;    
   }
+
   .username-label input {
     width: 300px;
     height: 40px;
@@ -63,11 +63,29 @@ const LoginFormContainer = styled.form`
     margin-top: 18px;
   }
 
+  button:enabled {
+    cursor: pointer;
+  }
+
   span {
     color: white;
     font-family: 'Kanit', sans-serif;
     font-size: 1.2em;
   }
+
+  .create-account {
+    text-decoration: underline;
+    width: 300px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .error-login {
+    width: 300px;
+    text-align: center;
+    height: 70px;
+  }
+
 `;
 
 export default LoginFormContainer;
