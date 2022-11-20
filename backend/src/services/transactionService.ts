@@ -30,6 +30,7 @@ export default class TransactionService implements ITransactiontService {
     if (!filter && date) {
       const filterData = await this.transactionByDate(date, username);
       accountData = [...filterData];
+      return accountData;
     }
     const filterData = await this.transactionByDateAndFilter(date, username);
     const { debitedUser, creditedUser } = filterData;
