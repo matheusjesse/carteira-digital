@@ -7,6 +7,8 @@ services:
     working_dir: /app-frontend
     depends_on:
       - backend
+    volumes:
+      - ./frontend:/app-frontend
   backend:
     container_name: app_backend
     build: ./backend
