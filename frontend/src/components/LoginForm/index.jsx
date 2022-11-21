@@ -68,6 +68,7 @@ function LoginForm() {
       </label>
       <button
         type="button"
+        data-testid="login-button"
         onClick={ loginHandle }
         disabled={ buttonDisabled }
       >
@@ -75,6 +76,7 @@ function LoginForm() {
       </button>
       <span 
         className="create-account"
+        data-testid="register-redirect"
         onClick={ () => navigate('/register') }
       >
         Ainda Não tenho conta
