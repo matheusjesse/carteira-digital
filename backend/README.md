@@ -7,6 +7,10 @@
 
 `http://localhost:8000/login`
 
+Rodanto testes
+```
+    npm test
+```
 
 <details>
 <summary> Request Body</summary>
