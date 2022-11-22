@@ -3,14 +3,15 @@
 ## Toda a requisição exceto a criação de usuário precisa de um Token Valido
 ### Request - Criar Usuário
 
-`PUT /login` 
-
-`http://localhost:8000/login`
 
 Rodanto testes
 ```
     npm test
 ```
+
+`PUT /login` 
+
+`http://localhost:8000/login`
 
 <details>
 <summary> Request Body</summary>
