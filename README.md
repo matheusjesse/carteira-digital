@@ -9,18 +9,25 @@ A proposta foi fazer uma aplicação full-stack ultilizando dockerizada para faz
 
     cd ng-app
 ```
-Subindo containers
+Instalando BACKEND
 ```sh
+    cd backend
+    npm install
+```
+Subindo containers
+```
     docker-compose up
 ```
-Em um novo terminal acesse o a pasta de BACKEND
+Criando DataBase
 ```
-    npm run db:reset
+    npm run db:create
 ```
-Criando migrations 
+
+Criando migrations
 ```
-    npm run npx sequelize db:migrate
+    npx sequelize db:migrate
 ```
+- tudo ok
 
 Acesse o front no localhost 3000
 (OBS) acesse a pasta FRONTEND para ler o README do frontend
