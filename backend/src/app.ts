@@ -35,3 +35,6 @@ class App {
 }
 
 export default App;
+
+// execução dos testes
+export const { app } = new App();
