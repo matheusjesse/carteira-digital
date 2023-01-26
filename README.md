@@ -1,13 +1,13 @@
 # Gerenciamento de transações
 
-A proposta foi fazer uma aplicação full-stack ultilizando dockerizada para fazer gerenciamento de transações.
+A proposta foi fazer uma aplicação full-stack, de um carteira digital, ultilizando docker para fazer gerenciamento de transações.
 
 ## Instalação
 
 ```sh
-    git clone git@github.com:matheusjesse/ng-app.git
+    git clone git@github.com:matheusjesse/carteira-digital.git
 
-    cd ng-app
+    cd carteira-digital
 ```
 Instalando BACKEND
 ```sh
