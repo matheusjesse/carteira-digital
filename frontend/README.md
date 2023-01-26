@@ -14,6 +14,7 @@ Ao executar as instruçoes do README.md que esta na pasta ng-app voce terá aces
 
 ## Tecnologias usadas Frontend
 - React
+- Redux
 - Styled-components
 - (html / css / JavaScript)
 - Docker
