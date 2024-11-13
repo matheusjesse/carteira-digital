@@ -1,6 +1,6 @@
 # Gerenciamento de transações
 
-A proposta foi fazer uma aplicação full-stack, de um carteira digital, ultilizando docker para fazer gerenciamento de transações.
+A proposta foi fazer uma aplicação full-stack, de um carteira digital para fazer gerenciamento de transações.
 
 ## Instalação
 
